@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { authStorage } from '@/utils/storage';
 import ClientSidebar from '@/components/client/ClientSidebar';
+import { SidebarProvider } from '@/components/ui/sidebar';
 
 const ClientDashboard = () => {
   const navigate = useNavigate();
@@ -17,12 +18,14 @@ const ClientDashboard = () => {
   }, [navigate]);
 
   return (
-    <div className="flex h-screen">
-      <ClientSidebar />
-      <div className="flex-1 p-6 overflow-auto">
-        <Outlet />
+    <SidebarProvider defaultOpen={false}>
+      <div className="flex h-screen w-full">
+        <ClientSidebar />
+        <div className="flex-1 p-4 md:p-6 overflow-auto">
+          <Outlet />
+        </div>
       </div>
-    </div>
+    </SidebarProvider>
   );
 };
 

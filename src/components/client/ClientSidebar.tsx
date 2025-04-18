@@ -5,6 +5,16 @@ import { ListTodo, UserCog, LogOut } from 'lucide-react';
 import { authStorage } from '@/utils/storage';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '@/components/ui/use-toast';
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarTrigger,
+  SidebarHeader,
+  SidebarFooter,
+  SidebarMenu,
+  SidebarMenuItem,
+  SidebarMenuButton,
+} from '@/components/ui/sidebar';
 
 const ClientSidebar: React.FC = () => {
   const location = useLocation();
@@ -27,44 +37,45 @@ const ClientSidebar: React.FC = () => {
   ];
 
   return (
-    <div className="w-64 h-screen bg-sidebar border-r border-border flex flex-col">
-      <div className="p-4 border-b border-border">
-        <h1 className="text-xl font-bold">PixelPalace</h1>
-        <p className="text-sm text-muted-foreground">Client Dashboard</p>
-      </div>
+    <Sidebar>
+      <SidebarHeader>
+        <div className="p-4 border-b border-border">
+          <h1 className="text-xl font-bold">PixelPalace</h1>
+          <p className="text-sm text-muted-foreground">Client Dashboard</p>
+        </div>
+      </SidebarHeader>
       
-      <div className="flex-1 p-4">
-        <nav className="space-y-2">
+      <SidebarContent>
+        <SidebarMenu>
           {menuItems.map((item) => {
             const isActive = location.pathname === item.path;
             return (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`flex items-center gap-3 px-3 py-2 rounded-md transition-colors ${
-                  isActive 
-                    ? "bg-accent text-accent-foreground" 
-                    : "hover:bg-accent/50"
-                } animated-btn`}
-              >
-                {item.icon}
-                <span>{item.text}</span>
-              </Link>
+              <SidebarMenuItem key={item.path}>
+                <SidebarMenuButton asChild tooltip={item.text} isActive={isActive}>
+                  <Link to={item.path}>
+                    {item.icon}
+                    <span>{item.text}</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
             );
           })}
-        </nav>
-      </div>
+        </SidebarMenu>
+      </SidebarContent>
       
-      <div className="p-4 border-t border-border">
-        <button
-          onClick={handleLogout}
-          className="flex items-center gap-3 px-3 py-2 w-full text-left rounded-md hover:bg-accent/50 transition-colors animated-btn"
-        >
-          <LogOut size={20} />
-          <span>Logout</span>
-        </button>
-      </div>
-    </div>
+      <SidebarFooter>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton onClick={handleLogout} tooltip="Logout">
+              <LogOut size={20} />
+              <span>Logout</span>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarFooter>
+
+      <SidebarTrigger className="absolute right-4 top-4 lg:hidden" />
+    </Sidebar>
   );
 };
 
