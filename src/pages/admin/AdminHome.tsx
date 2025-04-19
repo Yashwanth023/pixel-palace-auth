@@ -22,7 +22,7 @@ const AdminHome = () => {
           <CardContent>
             <div className="text-2xl font-bold">{totalClients}</div>
             <p className="text-xs text-muted-foreground">Active users in the system</p>
-          </div>
+          </CardContent>
         </Card>
         
         <Card className="glass">
