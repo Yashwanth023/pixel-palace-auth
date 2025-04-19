@@ -1,73 +1,48 @@
-# Welcome to your Lovable project
 
-## Project info
+# PixelPalace - Task Management System
 
-**URL**: https://lovable.dev/projects/1f095af5-cb6d-40d8-9650-9a5645e1681b
+A modern task management application with separate interfaces for admins and clients.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- **User Authentication**: Secure login and registration system
+- **Role-Based Access**: Separate dashboards for admins and clients
+- **Task Management**: Create, view, and manage todos
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+- **Modern UI**: Dark theme with glass morphism effects
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1f095af5-cb6d-40d8-9650-9a5645e1681b) and start prompting.
+- React with TypeScript
+- Tailwind CSS for styling
+- shadcn/ui components
+- Role-based authentication
+- Local storage for data persistence
 
-Changes made via Lovable will be committed automatically to this repo.
+## Getting Started
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
+1. Install dependencies:
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+npm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+2. Start the development server:
+```sh
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Usage
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Client Features
+- Create and manage personal todos
+- View task history
+- Update profile information
 
-**Use GitHub Codespaces**
+### Admin Features
+- View all client lists
+- Monitor client todos
+- Manage system settings
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## License
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/1f095af5-cb6d-40d8-9650-9a5645e1681b) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+MIT License
