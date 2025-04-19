@@ -43,6 +43,3 @@ npm run dev
 - Monitor client todos
 - Manage system settings
 
-## License
-
-MIT License
